@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import HelloWorld from './components/areaPolylineCityLink.vue'
+import HelloWorld from './components/satelliteCoverage.vue'
 
 export default {
   name: 'App',
