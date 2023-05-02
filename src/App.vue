@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import HelloWorld from './components/satelliteCoverage.vue'
+import HelloWorld from './components/postProcessStages.vue'
 
 export default {
   name: 'App',
