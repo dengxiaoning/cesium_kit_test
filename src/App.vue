@@ -1,34 +1,41 @@
 <template>
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div id="app">
+    <router-link class="list-group-item"
+                 active-class="active"
+                 to="/modelGraphics">基础图形</router-link>
+    <router-link class="list-group-item"
+                 active-class="active"
+                 to="/areaPolylineCityLink">城市道路线</router-link>
+    <router-link class="list-group-item"
+                 active-class="active"
+                 to="/circleScan">圆形扫描</router-link>
+    <router-link class="list-group-item"
+                 active-class="active"
+                 to="/phaseControlMaterial">相控材质</router-link>
+    <router-link class="list-group-item"
+                 active-class="active"
+                 to="/polylineCityLink">发光线</router-link>
+    <router-link class="list-group-item"
+                 active-class="active"
+                 to="/postProcessStages">后置场景处理</router-link>
+    <router-link class="list-group-item"
+                 active-class="active"
+                 to="/radarScan">雷达扫描</router-link>
+    <router-link class="list-group-item"
+                 active-class="active"
+                 to="/satelliteCoverage">相控跟随</router-link>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/postProcessStages.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
 }
 </script>
 
 <style>
-html,
-body,
-#app {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
-    Microsoft YaHei, SimSun, sans-serif;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  -webkit-tap-highlight-color: transparent;
-  background-color: #f8f8f8;
-  font-size: 14px;
-  overflow: hidden;
-  position: relative;
+.list-group-item {
+  margin: 5px;
 }
 </style>
