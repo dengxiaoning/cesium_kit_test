@@ -24,6 +24,12 @@
     <router-link class="list-group-item"
                  active-class="active"
                  to="/satelliteCoverage">相控跟随</router-link>
+    <router-link class="list-group-item"
+                 active-class="active"
+                 to="/drawPlot">标会</router-link>
+    <router-link class="list-group-item"
+                 active-class="active"
+                 to="/coneControl">锥体图元控制</router-link>
     <router-view></router-view>
   </div>
 </template>

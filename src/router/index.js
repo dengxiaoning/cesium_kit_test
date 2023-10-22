@@ -6,6 +6,8 @@ import polylineCityLink from "../components/polylineCityLink.vue";
 import postProcessStages from "../components/postProcessStages.vue";
 import radarScan from "../components/radarScan.vue";
 import satelliteCoverage from "../components/satelliteCoverage.vue";
+import drawPlot from "../components/drawPlot.vue";
+import coneControl from "../components/coneControl.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
@@ -44,6 +46,14 @@ const routes = [
   {
     path: "/satelliteCoverage",
     component: satelliteCoverage,
+  },
+  {
+    path: "/drawPlot",
+    component: drawPlot,
+  },
+  {
+    path: "/coneControl",
+    component: coneControl,
   },
 ];
 
