@@ -38,7 +38,7 @@
   "resolved" "https://registry.npmmirror.com/@babel/compat-data/-/compat-data-7.21.4.tgz"
   "version" "7.21.4"
 
-"@babel/core@*", "@babel/core@^7.0.0", "@babel/core@^7.0.0-0", "@babel/core@^7.12.0", "@babel/core@^7.12.16", "@babel/core@^7.13.0", "@babel/core@^7.4.0-0", "@babel/core@>=7.11.0":
+"@babel/core@^7.0.0", "@babel/core@^7.0.0-0", "@babel/core@^7.12.0", "@babel/core@^7.12.16", "@babel/core@^7.13.0", "@babel/core@^7.4.0-0", "@babel/core@>=7.11.0":
   "integrity" "sha512-qt/YV149Jman/6AfmlxJ04LMIu8bMoyl3RB91yTFrxQmgbrSvQMy7cI8Q62FHx1t8wJ8B5fu0UDoLwHAhUo1QA=="
   "resolved" "https://registry.npmmirror.com/@babel/core/-/core-7.21.4.tgz"
   "version" "7.21.4"
@@ -3676,10 +3676,10 @@
   "resolved" "https://registry.npmmirror.com/case-sensitive-paths-webpack-plugin/-/case-sensitive-paths-webpack-plugin-2.4.0.tgz"
   "version" "2.4.0"
 
-"cesium_dev_kit@^1.0.66":
-  "integrity" "sha512-/IsEnH5PhvxIrYsrKZxlKQncBvv+7QE3y1Q5hS6D0QgEshk3N5TT/0evAOKzUNG/7nhQ3sLgUPKpMuywh4Z7Hw=="
-  "resolved" "https://registry.npmjs.org/cesium_dev_kit/-/cesium_dev_kit-1.0.66.tgz"
-  "version" "1.0.66"
+"cesium_dev_kit@^1.0.70":
+  "integrity" "sha512-f7Awmcj6xnDb89QWwLhGNZXi8VNPnoEZephUpXGeLXCu56BHIjGLHANpLE5gpL57Y9RPvZ0zV9QoUNkcet6HZg=="
+  "resolved" "https://registry.npmjs.org/cesium_dev_kit/-/cesium_dev_kit-1.0.70.tgz"
+  "version" "1.0.70"
   dependencies:
     "@turf/turf" "^6.5.0"
     "concaveman" "^1.1.1"
@@ -4046,7 +4046,7 @@
   dependencies:
     "browserslist" "^4.21.5"
 
-"core-js@^3", "core-js@^3.8.3":
+"core-js@^3.8.3":
   "integrity" "sha512-ZNS5nbiSwDTq4hFosEDqm65izl2CWmLz0hARJMyNQBgkUZMIF51cQiMvIQKA6hvuaeWxQDP3hEedM1JZIgTldQ=="
   "resolved" "https://registry.npmmirror.com/core-js/-/core-js-3.30.1.tgz"
   "version" "3.30.1"

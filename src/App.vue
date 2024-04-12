@@ -30,6 +30,9 @@
     <router-link class="list-group-item"
                  active-class="active"
                  to="/coneControl">锥体图元控制</router-link>
+    <router-link class="list-group-item"
+                 active-class="active"
+                 to="/fanShapeScan">扇形扫描</router-link>
     <router-view></router-view>
   </div>
 </template>

@@ -7,6 +7,7 @@ import postProcessStages from "../components/postProcessStages.vue";
 import radarScan from "../components/radarScan.vue";
 import satelliteCoverage from "../components/satelliteCoverage.vue";
 import drawPlot from "../components/drawPlot.vue";
+import fanShapeScan from "../components/fanShapeScan.vue";
 import coneControl from "../components/coneControl.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -54,6 +55,10 @@ const routes = [
   {
     path: "/coneControl",
     component: coneControl,
+  },
+  {
+    path: "/fanShapeScan",
+    component: fanShapeScan,
   },
 ];
 

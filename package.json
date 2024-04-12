@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "cesium": "^1.105.0",
-    "cesium_dev_kit": "^1.0.66",
+    "cesium_dev_kit": "^1.0.70",
     "core-js": "^3.8.3",
     "element-plus": "^1.0.1-alpha.1",
     "vue": "^3.2.13",
