@@ -3676,10 +3676,10 @@
   "resolved" "https://registry.npmmirror.com/case-sensitive-paths-webpack-plugin/-/case-sensitive-paths-webpack-plugin-2.4.0.tgz"
   "version" "2.4.0"
 
-"cesium_dev_kit@^1.0.70":
-  "integrity" "sha512-f7Awmcj6xnDb89QWwLhGNZXi8VNPnoEZephUpXGeLXCu56BHIjGLHANpLE5gpL57Y9RPvZ0zV9QoUNkcet6HZg=="
-  "resolved" "https://registry.npmjs.org/cesium_dev_kit/-/cesium_dev_kit-1.0.70.tgz"
-  "version" "1.0.70"
+"cesium_dev_kit@^1.0.71":
+  "integrity" "sha512-xPTJW4t29/cI0D6JpcbfVO3gdSRcawTwESST3cHhCYLG46ZjeVUP9uHb6P1LidesI1Zf/ZEJLrhrCemD544kEg=="
+  "resolved" "https://registry.npmjs.org/cesium_dev_kit/-/cesium_dev_kit-1.0.71.tgz"
+  "version" "1.0.71"
   dependencies:
     "@turf/turf" "^6.5.0"
     "concaveman" "^1.1.1"

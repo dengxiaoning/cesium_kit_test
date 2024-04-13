@@ -1,11 +1,10 @@
 import modelGraphics from "../components/modelGraphics.vue";
 import areaPolylineCityLink from "../components/areaPolylineCityLink.vue";
 import circleScan from "../components/circleScan.vue";
-import phaseControlMaterial from "../components/phaseControlMaterial.vue";
 import polylineCityLink from "../components/polylineCityLink.vue";
 import postProcessStages from "../components/postProcessStages.vue";
 import radarScan from "../components/radarScan.vue";
-import satelliteCoverage from "../components/satelliteCoverage.vue";
+import semicircleSensor from "../components/semicircleSensor.vue";
 import drawPlot from "../components/drawPlot.vue";
 import fanShapeScan from "../components/fanShapeScan.vue";
 import coneControl from "../components/coneControl.vue";
@@ -29,10 +28,6 @@ const routes = [
     component: circleScan,
   },
   {
-    path: "/phaseControlMaterial",
-    component: phaseControlMaterial,
-  },
-  {
     path: "/polylineCityLink",
     component: polylineCityLink,
   },
@@ -45,8 +40,8 @@ const routes = [
     component: radarScan,
   },
   {
-    path: "/satelliteCoverage",
-    component: satelliteCoverage,
+    path: "/semicircleSensor",
+    component: semicircleSensor,
   },
   {
     path: "/drawPlot",
