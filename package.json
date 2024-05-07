@@ -1,6 +1,6 @@
 {
   "name": "cesium_kit_test",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "cesium": "^1.105.0",
-    "cesium_dev_kit": "^1.0.71",
+    "cesium_dev_kit": "^1.0.76",
     "core-js": "^3.8.3",
     "element-plus": "^1.0.1-alpha.1",
     "vue": "^3.2.13",

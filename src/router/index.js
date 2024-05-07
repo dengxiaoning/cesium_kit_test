@@ -8,6 +8,7 @@ import semicircleSensor from "../components/semicircleSensor.vue";
 import drawPlot from "../components/drawPlot.vue";
 import fanShapeScan from "../components/fanShapeScan.vue";
 import coneControl from "../components/coneControl.vue";
+import analysis from "../components/analysisCtrl.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
@@ -54,6 +55,10 @@ const routes = [
   {
     path: "/fanShapeScan",
     component: fanShapeScan,
+  },
+  {
+    path: "/analysis",
+    component: analysis,
   },
 ];
 

@@ -30,6 +30,9 @@
     <router-link class="list-group-item"
                  active-class="active"
                  to="/fanShapeScan">扇形扫描</router-link>
+    <router-link class="list-group-item"
+                 active-class="active"
+                 to="/analysis">三维分析</router-link>
     <router-view></router-view>
   </div>
 </template>
