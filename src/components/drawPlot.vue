@@ -111,17 +111,28 @@ export default {
     this.initMap()
   },
   methods: {
-    initMap () {
+
+
+    async initMap () {
       const drawObj = new Draw({
         cesiumGlobal: Cesium,
         containerId: 'cesiumContainer',
         viewerConfig: {
           infoBox: false,
           shouldAnimate: true,
+          imageryProvider: new Cesium.UrlTemplateImageryProvider({
+            url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+            subdomains: ['0', '1', '2', '3'],
+            tilingScheme: new Cesium.WebMercatorTilingScheme()
+          }),
+          terrainProvider:
+            await Cesium.CesiumTerrainProvider.fromIonAssetId(1),
         },
         extraConfig: {},
         MapImageryList: []
       })
+
+      console.log(1, Cesium.Ion.defaultAccessToken);
       // const { viewer, material, graphics, draw,
       //   attackArrowObj,
       //   straightArrowObj,
