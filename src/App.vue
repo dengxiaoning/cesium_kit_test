@@ -33,6 +33,9 @@
     <router-link class="list-group-item"
                  active-class="active"
                  to="/analysis">三维分析</router-link>
+    <router-link class="list-group-item"
+                 active-class="active"
+                 to="/pathRoaming">第一人称漫游</router-link>
     <router-view></router-view>
   </div>
 </template>
