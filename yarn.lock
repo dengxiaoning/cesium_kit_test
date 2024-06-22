@@ -3676,10 +3676,10 @@
   "resolved" "https://registry.npmmirror.com/case-sensitive-paths-webpack-plugin/-/case-sensitive-paths-webpack-plugin-2.4.0.tgz"
   "version" "2.4.0"
 
-"cesium_dev_kit@^1.0.81":
-  "integrity" "sha512-2OVGE0kmEK5tCix7xiRnlu56GjckWeyQUt/oBdJ985Pzm1es902yKDYU+gcb3J9PvTq/xXOeWaK3sQOd+z0Eaw=="
-  "resolved" "https://registry.npmjs.org/cesium_dev_kit/-/cesium_dev_kit-1.0.81.tgz"
-  "version" "1.0.81"
+"cesium_dev_kit@^1.0.84":
+  "integrity" "sha512-gc78/GNB1gkFQt9I/cNtP8FTKDUtdJnIM1DjlncyQ46cW6NK25BZ2Kao+yucc8PsVm58cm9Uk+vYh3MfyftfPw=="
+  "resolved" "https://registry.npmjs.org/cesium_dev_kit/-/cesium_dev_kit-1.0.84.tgz"
+  "version" "1.0.84"
   dependencies:
     "@turf/turf" "^6.5.0"
     "concaveman" "^1.1.1"
@@ -8344,6 +8344,11 @@
     "loader-utils" "^2.0.0"
     "neo-async" "^2.6.2"
     "schema-utils" "^3.0.0"
+
+"three@^0.163.0":
+  "integrity" "sha512-HlMgCb2TF/dTLRtknBnjUTsR8FsDqBY43itYop2+Zg822I+Kd0Ua2vs8CvfBVefXkBdNDrLMoRTGCIIpfCuDew=="
+  "resolved" "https://registry.npmjs.org/three/-/three-0.163.0.tgz"
+  "version" "0.163.0"
 
 "through2@^2.0.0":
   "integrity" "sha512-/mrRod8xqpA+IHSLyGCQ2s8SPHiCDEeQJSep1jqLYeEUClOFG2Qsh+4FU6G9VeqpZnGW/Su8LQGc4YKni5rYSQ=="

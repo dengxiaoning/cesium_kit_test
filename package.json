@@ -9,10 +9,11 @@
   },
   "dependencies": {
     "cesium": "^1.105.0",
-    "cesium_dev_kit": "^1.0.81",
+    "cesium_dev_kit": "^1.0.84",
     "core-js": "^3.8.3",
     "element-plus": "^1.0.1-alpha.1",
     "vue": "^3.2.13",
+    "three": "^0.163.0",
     "vue-router": "^4.2.4"
   },
   "devDependencies": {

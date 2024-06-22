@@ -36,6 +36,9 @@
     <router-link class="list-group-item"
                  active-class="active"
                  to="/pathRoaming">第一人称漫游</router-link>
+    <router-link class="list-group-item"
+                 active-class="active"
+                 to="/aniSoldier">奔跑的士兵</router-link>
     <router-view></router-view>
   </div>
 </template>

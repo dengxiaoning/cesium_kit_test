@@ -10,6 +10,7 @@ import fanShapeScan from "../components/fanShapeScan.vue";
 import coneControl from "../components/coneControl.vue";
 import analysis from "../components/analysisCtrl.vue";
 import pathRoaming from "../components/pathRoaming.vue";
+import aniSoldier from "../components/ani-soldier.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
@@ -64,6 +65,10 @@ const routes = [
   {
     path: "/pathRoaming",
     component: pathRoaming,
+  },
+  {
+    path: "/aniSoldier",
+    component: aniSoldier,
   },
 ];
 
