@@ -97,8 +97,16 @@ export default {
           value: 'AttackArrow'
         },
         {
+          label: '攻击箭头-修改',
+          value: 'AttackArrowModify'
+        },
+        {
           label: '钳击箭头',
           value: 'PincerArrow'
+        },
+        {
+          label: '钳击箭头-修改',
+          value: 'PincerArrowModify'
         },
         {
           label: '清除',
@@ -111,50 +119,44 @@ export default {
     this.initMap()
   },
   methods: {
-
-
-    async initMap () {
+    // 添加地形数据
+    async addWorldTerrainAsync (viewer) {
+      try {
+        const terrainProvider = await Cesium.CesiumTerrainProvider.fromIonAssetId(1);
+        viewer.terrainProvider = terrainProvider;
+      } catch (error) {
+        console.log(`Failed to add world imagery: ${error}`);
+      }
+    },
+    initMap () {
       const drawObj = new Draw({
         cesiumGlobal: Cesium,
         containerId: 'cesiumContainer',
         viewerConfig: {
           infoBox: false,
           shouldAnimate: true,
-          imageryProvider: new Cesium.UrlTemplateImageryProvider({
-            url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-            subdomains: ['0', '1', '2', '3'],
-            tilingScheme: new Cesium.WebMercatorTilingScheme()
-          }),
-          terrainProvider:
-            await Cesium.CesiumTerrainProvider.fromIonAssetId(1),
         },
-        extraConfig: {},
-        MapImageryList: []
+        extraConfig: {
+          depthTest: true,
+          AccessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmYzkwZWEwYy1mMmIwLTQwYjctOWJlOC00OWU4ZWU1YTZhOTkiLCJpZCI6MTIxODIsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1NjA0OTUyNDN9.wagvw7GxUjxvHXO6m2jjX5Jh9lN0UyTJhNGEcSm2pgE'
+        },
+        MapImageryList: [
+          {
+            type: 'UrlTemplateImageryProvider',
+            option: {
+              url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+              subdomains: ['0', '1', '2', '3'],
+              tilingScheme: new Cesium.WebMercatorTilingScheme()
+            }
+          }]
       })
-
-      console.log(1, Cesium.Ion.defaultAccessToken);
-      // const { viewer, material, graphics, draw,
-      //   attackArrowObj,
-      //   straightArrowObj,
-      //   pincerArrowObj } = new initCesium(
-      //     {
-      //       cesiumGlobal: Cesium,
-      //       containerId: 'cesiumContainer',
-      //       viewerConfig: {
-      //         infoBox: false,
-      //         shouldAnimate: true,
-      //       },
-      //       extraConfig: {},
-      //       MapImageryList: []
-      //     })
-
 
       this.c_viewer = drawObj.viewer
       this.draw = drawObj.draw
       this.draw.setDefSceneConfig()
       this.draw.setBloomLightScene()
       this.load3dTiles(drawObj.viewer)
-
+      this.addWorldTerrainAsync(drawObj.viewer);
       this.StraightArrowObj = drawObj.straightArrowObj
       this.AttackArrowObj = drawObj.attackArrowObj
       this.PincerArrowObj = drawObj.pincerArrowObj
@@ -185,18 +187,26 @@ export default {
             ]
           }
         })
+
+        // 将获取到的modelMatrix 设置到3dtiles 上面，
+        const modelMatrixOrg = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 540, 0, 1]
+        //可以注释下面这行 掉看看效果
+        tileset.modelMatrix = Cesium.Matrix4.fromArray(modelMatrixOrg);
         viewer.flyTo(tileset)
       })
     },
     caldDistain (item) {
       this.activeId = item.value
-      this.drawAgain();
+      if (item.label !== '钳击箭头-修改' && item.label !== '钳击箭头' &&
+        item.label !== '攻击箭头-修改' && item.label !== '攻击箭头') {
+        this.drawAgain();
+      }
       switch (item.label) {
         case '坐标点':
           this.draw.drawPointGraphics()
           break
         case '线段':
-          this.draw.drawLineGraphics()
+          this.draw.drawLineGraphics({ clampToGround: true })
           break
         case '多边形':
           this.draw.drawPolygonGraphics()
@@ -209,13 +219,13 @@ export default {
           break
 
         case '多边立方体':
-          this.draw.drawPolygonGraphics({ height: 200 })
+          this.draw.drawPolygonGraphics({ height: 1200 })
           break
         case '四方体':
-          this.draw.drawRectangleGraphics({ height: 200 })
+          this.draw.drawRectangleGraphics({ height: 1200 })
           break
         case '圆柱体':
-          this.draw.drawCircleGraphics({ height: 200 })
+          this.draw.drawCircleGraphics({ height: 1200 })
           break
         case '围栏':
           this.draw.drawWallGraphics()
@@ -230,7 +240,7 @@ export default {
           this.draw.drawCylinderGraphics()
           break
         case '走廊':
-          this.draw.drawCorridorGraphics({ width: 100, height: 20, extrudedHeight: 200 })
+          this.draw.drawCorridorGraphics({ width: 100, height: 1200, extrudedHeight: 20 })
           break
         case '管道':
           this.draw.drawPolylineVolumeGraphics()
@@ -258,12 +268,20 @@ export default {
             this.plotEntitiesId.push(entiteId)
           })
           break
+        case '攻击箭头-修改':
+          this.AttackArrowObj.startModify();
+          break
         case '钳击箭头':
           this.StraightArrowObj.disable()
           this.AttackArrowObj.disable()
-          this.PincerArrowObj.startDraw(entiteId => {
-            this.plotEntitiesId.push(entiteId)
+          this.PincerArrowObj.startDraw({
+            fillMaterial: Cesium.Color.DARKKHAKI.withAlpha(0.8), callback: entiteId => {
+              this.plotEntitiesId.push(entiteId)
+            }
           })
+          break
+        case '钳击箭头-修改':
+          this.PincerArrowObj.startModify()
           break
         case '清除':
           this.draw._drawLayer.entities.removeAll()
@@ -311,7 +329,9 @@ export default {
   top: 3px;
   right: 3px;
   z-index: 3;
+  padding: 12px 8px;
   color: #fff;
+  background: rgba(0, 0, 0, 0.7);
   .card-header {
     display: flex;
     justify-content: space-between;

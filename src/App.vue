@@ -23,7 +23,7 @@
                  to="/semicircleSensor">半圆传感器</router-link>
     <router-link class="list-group-item"
                  active-class="active"
-                 to="/drawPlot">标会</router-link>
+                 to="/drawPlot">标绘</router-link>
     <router-link class="list-group-item"
                  active-class="active"
                  to="/coneControl">锥形传感器</router-link>
