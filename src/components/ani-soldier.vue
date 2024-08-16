@@ -1,5 +1,5 @@
 <template>
-  <div class="content-main">
+  <div class="ani-content-main">
     <div id="cesiumContainer"></div>
     <div id="threeContainer"></div>
   </div>
@@ -197,33 +197,34 @@ export default {
   }
 }
 </script>
-<style scoped>
-.content-main {
+<style lang="scss" scoped>
+.ani-content-main {
   width: 100%;
-  height: 100vh;
-}
-#cesiumContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-  font-family: sans-serif;
-}
+  height: 98vh;
+  position: relative;
+  #cesiumContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    font-family: sans-serif;
+  }
 
-#threeContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-  font-family: sans-serif;
-  pointer-events: none;
+  #threeContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    font-family: sans-serif;
+    pointer-events: none;
+  }
 }
 </style>
