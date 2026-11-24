@@ -1,12 +1,11 @@
 <template>
   <div>
-    <div id="cesiumContainer"
-         class="map3d-contaner"></div>
+    <div id="cesiumContainer" class="map3d-contaner"></div>
   </div>
 </template>
 <script >
 import * as Cesium from 'cesium'
-import { Material } from 'cesium_dev_kit'
+import { Material } from 'cesium_dev_kit/material'
 import { raod, raod2, raod3, raod4, raod5, raod6, raod7 } from '../assets/extraData'
 
 export default {
@@ -16,7 +15,7 @@ export default {
   methods: {
     initMap () {
 
-      const materialObj = new Material({
+      const materialObj = Material({
         cesiumGlobal: Cesium,
         containerId: 'cesiumContainer',
         viewerConfig: {
@@ -26,24 +25,10 @@ export default {
         extraConfig: {},
         MapImageryList: []
       })
-      // const { viewer,
-      //   material,
-      //   graphics,
-      //   math3d } = new initCesium(
-      //     {
-      //       cesiumGlobal: Cesium,
-      //       containerId: 'cesiumContainer',
-      //       viewerConfig: {
-      //         infoBox: false,
-      //         shouldAnimate: true,
-      //       },
-      //       extraConfig: {},
-      //       MapImageryList: []
-      //     })
-
 
       this.c_viewer = materialObj.viewer;
       this.material = materialObj.material;
+      this.dispose = materialObj.dispose;
       this.material.setDefSceneConfig()
       this.material.setBloomLightScene()
       this.load3dTiles(materialObj.viewer);
@@ -157,8 +142,7 @@ export default {
     }
   },
   beforeUnmount () {
-    this.c_viewer = null;
-    this.material = null;
+    this.dispose();
   }
 }
 </script>

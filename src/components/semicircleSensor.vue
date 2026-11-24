@@ -1,54 +1,33 @@
 <template>
   <div class="semicircle-page">
-    <div id="cesiumContainer"
-         class="map3d-contaner"></div>
+    <div id="cesiumContainer" class="map3d-contaner"></div>
     <section class="elslider-control">
       <div class="slider-demo-block">
         <span class="demonstration">xHalfAngle:</span>
-        <input type="range"
-               v-model="xHalfAngleDef.value"
-               :max="xHalfAngleDef.max"
-               :min="xHalfAngleDef.min"
-               @change="xHalfAngleChange">
+        <input type="range" v-model="xHalfAngleDef.value" :max="xHalfAngleDef.max" :min="xHalfAngleDef.min" @change="xHalfAngleChange">
       </div>
       <div class="slider-demo-block">
         <span class="demonstration">yHalfAngle:</span>
-        <input type="range"
-               v-model="yHalfAngleDef.value"
-               :max="yHalfAngleDef.max"
-               :min="yHalfAngleDef.min"
-               @change="yHalfAngleChange">
+        <input type="range" v-model="yHalfAngleDef.value" :max="yHalfAngleDef.max" :min="yHalfAngleDef.min" @change="yHalfAngleChange">
       </div>
       <div class="slider-demo-block">
         <span class="demonstration">Heading:</span>
-        <input type="range"
-               v-model="HeadingDef.value"
-               :max="HeadingDef.max"
-               :min="HeadingDef.min"
-               @change="HeadingChange">
+        <input type="range" v-model="HeadingDef.value" :max="HeadingDef.max" :min="HeadingDef.min" @change="HeadingChange">
       </div>
       <div class="slider-demo-block">
         <span class="demonstration">Pitch:</span>
-        <input type="range"
-               v-model="PitchDef.value"
-               :max="PitchDef.max"
-               :min="PitchDef.min"
-               @change="PitchChange">
+        <input type="range" v-model="PitchDef.value" :max="PitchDef.max" :min="PitchDef.min" @change="PitchChange">
       </div>
       <div class="slider-demo-block">
         <span class="demonstration">Roll:</span>
-        <input type="range"
-               v-model="RollDef.value"
-               :max="RollDef.max"
-               :min="RollDef.min"
-               @change="RollChange">
+        <input type="range" v-model="RollDef.value" :max="RollDef.max" :min="RollDef.min" @change="RollChange">
       </div>
     </section>
   </div>
 </template>
 <script>
 import * as Cesium from 'cesium'
-import { CustomCesiumPlugin } from 'cesium_dev_kit'
+import { CustomCesiumPlugin } from 'cesium_dev_kit/custom-cesium-plugin'
 export default {
   data () {
     return {

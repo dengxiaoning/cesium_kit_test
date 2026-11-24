@@ -1,7 +1,6 @@
 <template>
   <div class="analysis-plane">
-    <div id="cesiumContainer"
-         class="map3d-contaner"></div>
+    <div id="cesiumContainer" class="map3d-contaner"></div>
     <el-card class="box-card">
       <template #header>
         <div class="card-header">
@@ -9,27 +8,20 @@
         </div>
       </template>
       <div class="group-btn">
-        <el-button size="mini"
-                   @click="VisibilityAnalysis">通视分析</el-button>
-        <el-button size="mini"
-                   @click="lookAroundAnalysis">环视分析</el-button>
-        <el-button size="mini"
-                   @click="visualFieldAnalysis">可视域分析</el-button>
-        <el-button size="mini"
-                   @click="clipPlanAnalysis">地形开挖分析</el-button>
-        <el-button size="mini"
-                   @click="submergedAnalysis">淹没分析</el-button>
-        <el-button size="mini"
-                   @click="slopeAnalysis">坡度分析</el-button>
-        <el-button size="mini"
-                   @click="cutVolumeAnalysis"> 方量分析</el-button>
+        <el-button size="mini" @click="VisibilityAnalysis">通视分析</el-button>
+        <el-button size="mini" @click="lookAroundAnalysis">环视分析</el-button>
+        <el-button size="mini" @click="visualFieldAnalysis">可视域分析</el-button>
+        <el-button size="mini" @click="clipPlanAnalysis">地形开挖分析</el-button>
+        <el-button size="mini" @click="submergedAnalysis">淹没分析</el-button>
+        <el-button size="mini" @click="slopeAnalysis">坡度分析</el-button>
+        <el-button size="mini" @click="cutVolumeAnalysis"> 方量分析</el-button>
       </div>
     </el-card>
   </div>
 </template>
 <script >
 import * as Cesium from 'cesium'
-import { initCesium } from 'cesium_dev_kit'
+import { createKit } from 'cesium_dev_kit'
 export default {
   mounted () {
     this.initMap()
@@ -39,7 +31,7 @@ export default {
       const {
         viewer,
         analysis
-      } = new initCesium(
+      } = createKit(
         {
           cesiumGlobal: Cesium,
           containerId: 'cesiumContainer',

@@ -1,18 +1,13 @@
 <template>
   <div class="inner-page">
-    <div id="cesiumContainer"
-         class="map3d-contaner"></div>
+    <div id="cesiumContainer" class="map3d-contaner"></div>
     <el-card class="box-card">
       <template #header>
         <div class="card-header">
           <span>绘制面板</span>
         </div>
       </template>
-      <el-tag v-for="(item, idx) in menuData"
-              :key="idx"
-              class="text item"
-              :class="activeId === item.value ? 'active' : ''"
-              @click="caldDistain(item)">
+      <el-tag v-for="(item, idx) in menuData" :key="idx" class="text item" :class="activeId === item.value ? 'active' : ''" @click="caldDistain(item)">
         {{ item.label }}
       </el-tag>
     </el-card>
@@ -20,7 +15,7 @@
 </template>
 <script>
 import * as Cesium from 'cesium'
-import { Draw } from 'cesium_dev_kit'
+import { Draw } from 'cesium_dev_kit/draw'
 
 export default {
   data () {
@@ -138,7 +133,6 @@ export default {
         },
         extraConfig: {
           depthTest: true,
-          AccessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmYzkwZWEwYy1mMmIwLTQwYjctOWJlOC00OWU4ZWU1YTZhOTkiLCJpZCI6MTIxODIsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1NjA0OTUyNDN9.wagvw7GxUjxvHXO6m2jjX5Jh9lN0UyTJhNGEcSm2pgE'
         },
         MapImageryList: [
           {
